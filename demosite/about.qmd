@@ -1,0 +1,25 @@
+---
+title: "About"
+format: html
+---
+
+## WELCOME
+
+![](me.png){width=700px}
+
+## ABOUT ME
+
+Hello, I'm Deveyn Hainey, and I'm thrilled to share a bit about myself with you. Currently residing in beautiful Denver, Colorado, I'm on an exciting educational journey pursuing my Bachelor of Science degree in Computer Science, with a minor in Data Science and a certificate in Cyber Security from the University of Colorado Denver.
+     
+My passion for technology and data-driven solutions has led me to gain valuable experience in the software engineering, data science, and product fields. I'm dedicated to honing my skills and knowledge to become a well-rounded professional in these domains.
+    
+Anticipating my graduation in 2025, I am actively seeking opportunities to  further apply and expand upon my expertise. I am excited about the possibilities that lie ahead and look forward to connecting with like-minded individuals and organizations who share my enthusiasm for the ever-evolving world of computer science, data science, and product. Thank you for taking the time to learn more about me, and please don't hesitate to reach out if you'd like to connect or learn more about my journey and aspirations.
+    
+## CONNECT WITH ME
+Press an icon below to email me or visit my GitHub profile!
+
+
+[Email Me](mailto:deveynnhainey@email.com){.btn .btn-light}
+
+[Visit my GitHub](https://github.com/deveyn-hainey){.btn .btn-light}
+
