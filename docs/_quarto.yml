@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+  
+website:
+  title: "Deveyn Hainey's Website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: hobbies.qmd
+        text: Hobbies
+
+format:
+  html:
+    theme: vapor
+    css: styles.css
+    toc: true
+
+
+
