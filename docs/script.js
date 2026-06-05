@@ -5,10 +5,7 @@
   const ctx = canvas.getContext('2d');
   let W, H, particles = [];
 
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
+  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
 
   function makeParticle() {
     return {
@@ -25,20 +22,15 @@
   function loop() {
     ctx.clearRect(0, 0, W, H);
     for (const p of particles) {
-      p.x += p.vx + Math.sin(p.phase) * 0.16;
-      p.y += p.vy;
-      p.phase += 0.017;
+      p.x += p.vx + Math.sin(p.phase) * 0.16; p.y += p.vy; p.phase += 0.017;
       p.alpha += p.aDir;
       if (p.alpha <= 0 || p.alpha >= 0.82) p.aDir *= -1;
       if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
       ctx.save();
-      ctx.globalAlpha = Math.max(0, p.alpha) * 0.6;
-      ctx.shadowBlur  = 9;
-      ctx.shadowColor = `hsla(${p.hue},75%,60%,0.9)`;
-      ctx.fillStyle   = `hsla(${p.hue},80%,72%,1)`;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.globalAlpha = Math.max(0, p.alpha) * 0.58;
+      ctx.shadowBlur = 9; ctx.shadowColor = `hsla(${p.hue},75%,60%,0.9)`;
+      ctx.fillStyle = `hsla(${p.hue},80%,72%,1)`;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
       ctx.restore();
     }
     requestAnimationFrame(loop);
@@ -50,10 +42,10 @@
   loop();
 })();
 
-/* ── NAVBAR ───────────────────────────────────────────── */
+/* ── NAVBAR SCROLL SHADOW ─────────────────────────────── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
 
 /* ── MOBILE MENU ──────────────────────────────────────── */
@@ -66,45 +58,68 @@ hamburger.addEventListener('click', () => {
   hamburger.setAttribute('aria-expanded', String(open));
 });
 
-// Close menu when a link is clicked
-navMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
+function closeMobileMenu() {
+  navMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
+
+/* ── SPA NAVIGATION ───────────────────────────────────── */
+const PAGES = ['home', 'projects', 'about', 'resume', 'contact'];
+
+function navigate(id) {
+  if (!PAGES.includes(id)) id = 'home';
+
+  // Hide all sections, deactivate all nav links
+  PAGES.forEach(p => {
+    const el = document.getElementById(p);
+    if (el) el.classList.remove('active');
   });
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+
+  // Show target
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo(0, 0);
+
+    // Fire reveal animations for this page
+    setTimeout(() => {
+      target.querySelectorAll('.reveal').forEach(el => {
+        const delay = parseInt(el.dataset.delay || '0', 10);
+        // Reset first so re-visiting a page re-animates
+        el.classList.remove('visible');
+        setTimeout(() => el.classList.add('visible'), delay + 20);
+      });
+
+      if (id === 'projects') {
+        const line = document.getElementById('trailLine');
+        if (line) { line.classList.remove('visible'); setTimeout(() => line.classList.add('visible'), 350); }
+      }
+    }, 30);
+  }
+
+  // Mark active nav link
+  document.querySelectorAll(`[data-nav="${id}"]`).forEach(l => l.classList.add('active'));
+
+  // Update URL hash silently
+  history.replaceState(null, '', id === 'home' ? window.location.pathname : '#' + id);
+
+  closeMobileMenu();
+}
+
+/* ── WIRE UP ALL NAV BUTTONS ──────────────────────────── */
+document.querySelectorAll('[data-nav]').forEach(el => {
+  el.addEventListener('click', () => navigate(el.dataset.nav));
 });
 
-/* ── ACTIVE NAV ON SCROLL ─────────────────────────────── */
-const sections  = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-link[data-section]');
-const NAV_H     = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 66;
+/* ── INITIAL LOAD FROM HASH ───────────────────────────── */
+(function () {
+  const hash = window.location.hash.replace('#', '');
+  navigate(PAGES.includes(hash) ? hash : 'home');
+})();
 
-const sectionObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === id));
-    }
-  });
-}, { rootMargin: `-${NAV_H}px 0px -55% 0px`, threshold: 0 });
-
-sections.forEach(s => sectionObserver.observe(s));
-
-/* ── TRAIL LINE ───────────────────────────────────────── */
-const trailLineObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      trailLineObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.05 });
-
-const trailLine = document.getElementById('trailLine');
-if (trailLine) trailLineObserver.observe(trailLine);
-
-/* ── SCROLL REVEAL ────────────────────────────────────── */
+/* ── SCROLL REVEAL (for elements already visible) ─────── */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
@@ -112,6 +127,7 @@ const revealObserver = new IntersectionObserver(entries => {
     setTimeout(() => entry.target.classList.add('visible'), delay);
     revealObserver.unobserve(entry.target);
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
+// Observe all reveals so scroll within long pages also works
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));

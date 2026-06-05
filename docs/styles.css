@@ -104,11 +104,22 @@ ul { list-style: none; }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── SECTIONS (scroll-based) ─────────────────────────── */
-section {
+/* ── SECTIONS (SPA show/hide) ────────────────────────── */
+.page-section {
+  display: none;
   position: relative;
   z-index: 1;
-  scroll-margin-top: var(--nav-h);
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  animation: pageIn 0.45s var(--ease) both;
+}
+.page-section.active { display: block; }
+/* Home needs flex for its column layout */
+#home.active { display: flex; flex-direction: column; }
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── REVEAL ANIMATION ────────────────────────────────── */
@@ -161,14 +172,26 @@ section {
 /* ══════════════════════════════════════════════════════
    HOME
 ══════════════════════════════════════════════════════ */
-.sec-home {
+#home {
   background: var(--bg);
-  min-height: 100vh;
-  padding-top: var(--nav-h);
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
+
+/* Forest tree silhouettes */
+.forest-bg {
+  position: absolute;
+  inset: 0; bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.trees {
+  position: absolute;
+  bottom: 0;
+  width: 320px;
+  height: auto;
+}
+.trees-left  { left: -30px; }
+.trees-right { right: -30px; }
 
 .hero {
   flex: 1;
@@ -276,7 +299,7 @@ section {
 /* ══════════════════════════════════════════════════════
    PROJECTS
 ══════════════════════════════════════════════════════ */
-.sec-projects { background: var(--bg); padding-bottom: 80px; }
+#projects { background: var(--bg); padding-bottom: 80px; }
 
 /* Trail cards */
 .trail-container {
@@ -399,7 +422,7 @@ section {
 /* ══════════════════════════════════════════════════════
    ABOUT
 ══════════════════════════════════════════════════════ */
-.sec-about { background: var(--cream); padding-bottom: 80px; }
+#about { background: var(--cream); padding-bottom: 80px; }
 .about-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 
@@ -446,7 +469,7 @@ section {
 /* ══════════════════════════════════════════════════════
    RESUME
 ══════════════════════════════════════════════════════ */
-.sec-resume { background: var(--bg); padding-bottom: 80px; }
+#resume { background: var(--bg); padding-bottom: 80px; }
 .resume-wrap { max-width: 840px; margin: 0 auto; padding: 0 24px; }
 
 .res-doc {
@@ -515,7 +538,7 @@ section {
 /* ══════════════════════════════════════════════════════
    CONTACT
 ══════════════════════════════════════════════════════ */
-.sec-contact { background: var(--cream); padding-bottom: 80px; }
+#contact { background: var(--cream); padding-bottom: 80px; }
 .contact-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
 
