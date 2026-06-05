@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Deveyn Hainey — Machine Learning Engineer specializing in ML infrastructure, LLM evaluation, and production data systems.">
+  <meta name="description" content="Deveyn Hainey — ML Engineer & Product-minded Data Scientist building AI systems that scale.">
   <meta name="theme-color" content="#2D6A4F">
-  <title>Deveyn Hainey — ML Engineer</title>
+  <title>Deveyn Hainey</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -15,10 +15,10 @@
 
   <canvas id="fireflies"></canvas>
 
-  <!-- ── NAV ────────────────────────────────────────────── -->
+  <!-- ── NAVBAR ──────────────────────────────────────── -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="#home" class="nav-brand" data-target="home">
+      <a href="#home" class="nav-brand">
         <svg class="brand-leaf" viewBox="0 0 20 24" fill="none">
           <path d="M10 2C5 2 2 7 2 12C2 17 5 22 10 22C10 22 10 13 17 9C17 9 15 2 10 2Z" fill="currentColor"/>
           <line x1="10" y1="22" x2="10" y2="14" stroke="#F8F5F0" stroke-width="1.2" stroke-linecap="round"/>
@@ -29,410 +29,642 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home"     class="nav-link active" data-target="home">Home</a></li>
-        <li><a href="#projects" class="nav-link"        data-target="projects">Projects</a></li>
-        <li><a href="#about"    class="nav-link"        data-target="about">About</a></li>
-        <li><a href="#contact"  class="nav-link"        data-target="contact">Contact</a></li>
+        <li><a href="#home"     class="nav-link" data-section="home">Home</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#about"    class="nav-link" data-section="about">About</a></li>
+        <li><a href="#resume"   class="nav-link" data-section="resume">Resume</a></li>
+        <li><a href="#contact"  class="nav-link" data-section="contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <main>
+  <!-- ══════════════════════════════════════════════════
+       HOME
+  ══════════════════════════════════════════════════════ -->
+  <section id="home" class="sec-home">
 
-    <!-- ── HOME ───────────────────────────────────────────── -->
-    <section id="home" class="page active">
-      <div class="hero">
-        <div class="hero-text">
-          <div class="hero-eyebrow">
-            <span class="eyebrow-dot"></span>
-            Machine Learning Engineer
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          ML Engineer &amp; Data Scientist
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm<br>
+          <span class="title-accent">Deveyn</span>
+        </h1>
+        <p class="hero-bio">
+          I build AI systems that people actually use — from improving how students
+          get graded to unlocking new learning experiences for millions of users.
+          I'm a data scientist who bridges the gap between rigorous engineering
+          and real product impact.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            See My Work
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+          </a>
+          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
+            Resume
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3v10M5 9l5 5 5-5"/><path d="M3 16h14"/></svg>
+          </a>
+        </div>
+        <div class="hero-pills">
+          <span>Python</span><span>AI &amp; ML</span><span>Product Analytics</span>
+          <span>Data Science</span><span>Cloud</span><span>A/B Testing</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="profile-wrap">
+          <div class="profile-ring ring-outer"></div>
+          <div class="profile-ring ring-inner"></div>
+          <img src="mypic.png" alt="Deveyn Hainey" class="profile-img"
+               onerror="this.src='https://github.com/deveyn-hainey.png'">
+        </div>
+        <div class="stat-float stat-a">
+          <span class="stat-num">+33%</span>
+          <span class="stat-lbl">Grading Accuracy</span>
+        </div>
+        <div class="stat-float stat-b">
+          <span class="stat-num">60M+</span>
+          <span class="stat-lbl">Users Served</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    </div>
+
+    <svg class="deco-leaf leaf-tl" viewBox="0 0 120 160" fill="none" aria-hidden="true">
+      <path d="M60 8C30 8 8 38 8 76C8 118 28 152 60 152C60 152 60 88 104 60C104 60 92 8 60 8Z" fill="#2D6A4F" opacity="0.06"/>
+    </svg>
+    <svg class="deco-leaf leaf-br" viewBox="0 0 120 160" fill="none" aria-hidden="true">
+      <path d="M60 8C30 8 8 38 8 76C8 118 28 152 60 152C60 152 60 88 104 60C104 60 92 8 60 8Z" fill="#74C69D" opacity="0.08"/>
+    </svg>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       PROJECTS
+  ══════════════════════════════════════════════════════ -->
+  <section id="projects" class="sec-projects">
+
+    <div class="section-head reveal">
+      <div class="section-eyebrow">
+        <svg viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="3"/></svg>
+        The Trails
+      </div>
+      <h2>Projects &amp; Work</h2>
+      <p>A look at the problems I've tackled — from improving AI accuracy for millions of students, to building decision-making tools for Fortune 500 executives.</p>
+    </div>
+
+    <!-- Featured work -->
+    <div class="trail-container">
+      <div class="trail-line" id="trailLine"></div>
+
+      <!-- 01 -->
+      <div class="trail-card reveal" data-delay="0">
+        <div class="trail-marker">01</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-badge badge-flagship">Quizlet · AI &amp; ML</span>
+            <h3>Improving How Students Get Graded</h3>
           </div>
-          <h1 class="hero-title">
-            Hi, I'm<br>
-            <span class="title-accent">Deveyn</span>
-          </h1>
-          <p class="hero-bio">
-            I build ML systems that scale — from GPU inference infrastructure and
-            LLM evaluation frameworks to production data pipelines at hundreds of
-            millions of interactions per month.
-          </p>
-          <div class="hero-cta">
-            <button class="btn btn-primary" data-nav="projects">
-              Explore Trails
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 10h12M10 4l6 6-6 6"/>
-              </svg>
-            </button>
-            <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
-              Resume
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M10 3v10M5 9l5 5 5-5"/><path d="M3 16h14"/>
-              </svg>
+          <p>Quizlet grades millions of typed, free-text answers every day. I led the effort to validate a new AI grading system that could run at scale on Quizlet's own infrastructure — <strong>improving grading accuracy by 33%</strong> while maintaining speed fast enough to feel instant. Students who previously got marked wrong for correctly-worded answers now get the credit they deserve.</p>
+          <div class="card-metrics">
+            <div class="metric-chip"><span class="m-val">+33%</span><span class="m-key">Grading accuracy</span></div>
+            <div class="metric-chip"><span class="m-val">&lt;50ms</span><span class="m-key">Response time</span></div>
+            <div class="metric-chip"><span class="m-val">100+ RPS</span><span class="m-key">Capacity</span></div>
+          </div>
+          <div class="card-tags"><span>AI/ML</span><span>Python</span><span>Cloud Infrastructure</span><span>A/B Testing</span></div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="trail-card reveal" data-delay="60">
+        <div class="trail-marker">02</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-badge badge-research">Quizlet · Product Analytics</span>
+            <h3>Making AI Study Questions Better</h3>
+          </div>
+          <p>I analyzed <strong>5,200 AI-generated wrong-answer choices</strong> to understand what separates a good distractor from a bad one — and found AI significantly outperforms rule-based generation. My analysis recommended a threshold change that expanded high-quality practice questions to cover <strong>228 million more study terms</strong> every month, with up to 40% better quality per question.</p>
+          <div class="card-metrics">
+            <div class="metric-chip"><span class="m-val">5,200</span><span class="m-key">Questions analyzed</span></div>
+            <div class="metric-chip"><span class="m-val">+40%</span><span class="m-key">Quality uplift</span></div>
+            <div class="metric-chip"><span class="m-val">+228M</span><span class="m-key">Study terms/month</span></div>
+          </div>
+          <div class="card-tags"><span>Data Analysis</span><span>A/B Testing</span><span>AI Evaluation</span><span>BigQuery</span><span>SQL</span></div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="trail-card reveal" data-delay="120">
+        <div class="trail-marker">03</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-badge badge-feature">Quizlet · Product Engineering</span>
+            <h3>Unlocking Diagram Flashcard Study</h3>
+          </div>
+          <p>Students studying diagram-based flashcard sets (think: anatomy, geography, labeled charts) were receiving <strong>zero AI-generated practice questions</strong> — a silent gap nobody had noticed. I diagnosed the root cause, wrote the design plan, and shipped the fix. Diagram sets now generate fully interactive practice questions for all Quizlet learners.</p>
+          <div class="card-metrics">
+            <div class="metric-chip"><span class="m-val">0 → ∞</span><span class="m-key">Questions for diagram sets</span></div>
+          </div>
+          <div class="card-tags"><span>Python</span><span>Product Engineering</span><span>Data Modeling</span><span>Testing</span></div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="trail-card reveal" data-delay="180">
+        <div class="trail-marker">04</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-badge badge-pm">Publicis Sapient · Product Management</span>
+            <h3>AI Analytics Dashboard for Fortune 500</h3>
+          </div>
+          <p>Led product delivery of an AI-powered analytics platform for a Fortune 500 client. The system ingested real-time business data and surfaced insights automatically — including an <strong>AI chatbot that let non-technical executives query live data in plain English</strong>, no analyst required. Owned roadmap, stakeholder alignment, and UX design end-to-end, achieving <strong>95% on-time milestone delivery</strong>.</p>
+          <div class="card-metrics">
+            <div class="metric-chip"><span class="m-val">+15%</span><span class="m-key">BI efficiency</span></div>
+            <div class="metric-chip"><span class="m-val">95%</span><span class="m-key">On-time delivery</span></div>
+            <div class="metric-chip"><span class="m-val">40+</span><span class="m-key">Product concepts designed</span></div>
+          </div>
+          <div class="card-tags"><span>Product Management</span><span>GenAI</span><span>Figma</span><span>Roadmapping</span><span>Stakeholder Management</span></div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="trail-card reveal" data-delay="240">
+        <div class="trail-marker">05</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-badge badge-security">UCD Research · Cybersecurity</span>
+            <h3>PhishSense — AI Phishing Detection</h3>
+          </div>
+          <p>Phishing attacks hit <strong>84% of businesses in 2024</strong>. I co-developed PhishSense, a Gmail add-on that uses AI to scan incoming emails for phishing signals and explains its reasoning in plain English — turning security alerts into teaching moments. The tool also generates a personal security dashboard showing users their email threat trends over time. <strong>Awarded the EUReCA Research Grant.</strong> Tested by 30+ faculty and students.</p>
+          <div class="card-tags"><span>AI/ML</span><span>Cybersecurity</span><span>Gmail API</span><span>Product Design</span><span>Research</span></div>
+          <div class="card-link-row">
+            <a href="https://github.com/deveyn-hainey/phishing-dashboard" target="_blank" rel="noopener" class="card-link">
+              View on GitHub
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M8 3l5 5-5 5"/></svg>
             </a>
           </div>
-          <div class="tech-chips">
-            <span>Python</span><span>vLLM</span><span>Kubernetes</span>
-            <span>BigQuery</span><span>Datadog</span><span>LangChain</span>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="profile-wrap">
-            <div class="profile-ring ring-outer"></div>
-            <div class="profile-ring ring-inner"></div>
-            <img src="mypic.png" alt="Deveyn Hainey" class="profile-img"
-                 onerror="this.src='https://github.com/deveyn-hainey.png'">
-          </div>
-          <div class="stat-float stat-a">
-            <span class="stat-num">+33%</span>
-            <span class="stat-lbl">Quality (Cohen's κ)</span>
-          </div>
-          <div class="stat-float stat-b">
-            <span class="stat-num">49ms</span>
-            <span class="stat-lbl">p95 @ 100 RPS</span>
-          </div>
         </div>
       </div>
 
-      <div class="scroll-hint">
-        <span class="scroll-label">Scroll to explore</span>
-        <div class="scroll-track"><div class="scroll-thumb"></div></div>
+      <!-- 06 -->
+      <div class="trail-card reveal" data-delay="300">
+        <div class="trail-marker">06</div>
+        <div class="card-body">
+          <div class="card-top-row">
+            <span class="card-badge badge-search">Quizlet · Search &amp; Discovery</span>
+            <h3>Making Quizlet's Search Smarter</h3>
+          </div>
+          <p>Analyzed terabytes of student search behavior to identify where Quizlet's search was falling short. Led algorithm improvements and evaluation frameworks that contributed to a <strong>25% increase in search adoption</strong> and 20% improvement in content relevance. Also integrated user feedback into Quizlet's AI assistant (Q-Chat), contributing to an <strong>80% increase in user engagement</strong> with the feature.</p>
+          <div class="card-metrics">
+            <div class="metric-chip"><span class="m-val">+25%</span><span class="m-key">Search adoption</span></div>
+            <div class="metric-chip"><span class="m-val">+80%</span><span class="m-key">AI engagement</span></div>
+            <div class="metric-chip"><span class="m-val">+20%</span><span class="m-key">Content relevance</span></div>
+          </div>
+          <div class="card-tags"><span>Data Analysis</span><span>Search Optimization</span><span>BigQuery</span><span>SQL</span><span>Product Analytics</span></div>
+        </div>
       </div>
 
-      <svg class="deco-leaf leaf-tl" viewBox="0 0 120 160" fill="none" aria-hidden="true">
-        <path d="M60 8C30 8 8 38 8 76C8 118 28 152 60 152C60 152 60 88 104 60C104 60 92 8 60 8Z" fill="#2D6A4F" opacity="0.06"/>
-      </svg>
-      <svg class="deco-leaf leaf-br" viewBox="0 0 120 160" fill="none" aria-hidden="true">
-        <path d="M60 8C30 8 8 38 8 76C8 118 28 152 60 152C60 152 60 88 104 60C104 60 92 8 60 8Z" fill="#74C69D" opacity="0.08"/>
-      </svg>
-    </section>
+    </div><!-- /trail-container -->
 
-    <!-- ── PROJECTS ────────────────────────────────────────── -->
-    <section id="projects" class="page">
+    <!-- Academic & Additional Projects -->
+    <div class="more-projects reveal" data-delay="100">
+      <div class="more-head">
+        <h3>More Projects</h3>
+        <p>Academic, research, and personal work</p>
+      </div>
+      <div class="more-grid">
+
+        <div class="more-card reveal" data-delay="0">
+          <span class="more-badge">Data Science</span>
+          <h4>Study Behavior Segmentation</h4>
+          <p>Built an ML model classifying Quizlet users by how they study — revealing that study habits predict long-term retention. Insights informed product strategy for learner engagement.</p>
+          <div class="more-tags"><span>Machine Learning</span><span>BigQuery</span><span>Data Analysis</span></div>
+        </div>
+
+        <div class="more-card reveal" data-delay="60">
+          <span class="more-badge">AI / ML</span>
+          <h4>Predicting Customer Churn (Neural Network)</h4>
+          <p>Built a neural network to predict which bank customers are likely to leave — helping financial institutions identify and retain at-risk customers before they churn.</p>
+          <div class="more-tags"><span>Neural Networks</span><span>Python</span><span>Data Science</span></div>
+        </div>
+
+        <div class="more-card reveal" data-delay="120">
+          <span class="more-badge">Data Science</span>
+          <h4>Data Clustering for Course Content</h4>
+          <p>Applied ML clustering techniques (K-Means, Sentence Embeddings, Fuzzy Matching) to group course content more accurately for search and recommendations.</p>
+          <div class="more-tags"><span>Clustering</span><span>Python</span><span>NLP</span><span>Data Analysis</span></div>
+        </div>
+
+        <div class="more-card reveal" data-delay="0">
+          <span class="more-badge">Engineering</span>
+          <h4>AI Platform Documentation — Quizlet Workspaces</h4>
+          <p>Authored a comprehensive knowledge hub synthesizing 15+ design docs and 20+ engineering tickets into a single source of truth for Quizlet's next-gen AI platform — keeping 18 stakeholders aligned.</p>
+          <div class="more-tags"><span>Technical Writing</span><span>AI Strategy</span><span>Documentation</span></div>
+        </div>
+
+        <div class="more-card reveal" data-delay="60">
+          <span class="more-badge">Cybersecurity</span>
+          <h4>Cyber Infrastructure Research</h4>
+          <p>Investigated real-world security breaches, developed defensive frameworks, and presented findings to academic and industry audiences as part of a grant-winning research initiative.</p>
+          <div class="more-tags"><span>Cybersecurity</span><span>Research</span><span>Threat Analysis</span></div>
+        </div>
+
+        <div class="more-card reveal" data-delay="120">
+          <span class="more-badge">Database Systems</span>
+          <h4>Car Rental Database System</h4>
+          <p>Designed and built a complete database system from scratch — entity-relationship modeling, relational schema design, SQL queries, and statistical analysis on the data.</p>
+          <div class="more-tags"><span>SQL</span><span>Database Design</span><span>Data Analysis</span></div>
+        </div>
+
+        <div class="more-card reveal" data-delay="0">
+          <span class="more-badge">Systems</span>
+          <h4>Computer Networking Project</h4>
+          <p>Built client-server communication software from scratch in C, implementing TCP and UDP protocols — deepening understanding of how applications communicate across networks.</p>
+          <div class="more-tags"><span>C</span><span>Networking</span><span>Systems Programming</span></div>
+        </div>
+
+        <div class="more-card reveal" data-delay="60">
+          <span class="more-badge">Product Design</span>
+          <h4>Engineering Design — Resume Booth</h4>
+          <p>Designed and prototyped a smart resume booth — a physical kiosk concept with a 3D-printed prototype and companion app wireframes — and presented to professors and campus leadership.</p>
+          <div class="more-tags"><span>Product Design</span><span>3D Printing</span><span>UX/UI</span><span>Figma</span></div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════════════ -->
+  <section id="about" class="sec-about">
+    <div class="about-wrap">
+
       <div class="section-head reveal">
         <div class="section-eyebrow">
           <svg viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="3"/></svg>
-          The Trails
+          The Explorer
         </div>
-        <h2>Projects &amp; Work</h2>
-        <p>Each project is a trail through the data forest — here's what I've been exploring.</p>
+        <h2>About Me</h2>
       </div>
 
-      <div class="trail-container">
-        <div class="trail-line" id="trailLine"></div>
+      <div class="about-grid">
+        <div class="about-bio reveal">
+          <p class="bio-lead">I'm a Machine Learning Engineer and Data Scientist based in Denver, Colorado — and I care deeply about building things that actually help people.</p>
+          <p>I graduated from the University of Colorado Denver with a BS in Computer Science, a minor in Data Science, and a certificate in Cybersecurity. Most recently, I've been at Quizlet — first as a data science research assistant, then as an ML Associate, and now as an AI & ML Engineer — working on the systems that power how millions of students study every day.</p>
+          <p>My work lives at the intersection of product and engineering. I dig into data to find what's actually hurting users, then build solutions to fix it. That might mean improving an AI grading model, redesigning how search results are ranked, or building an analytics dashboard a Fortune 500 executive can actually use without a technical guide.</p>
+          <p>Outside of work, I'm happiest on a hiking trail somewhere in Colorado. You'll also find me in the kitchen experimenting with new recipes (the chocolate chip cookie is still a work in progress) or planning the next trip somewhere in the world.</p>
 
-        <div class="trail-card reveal" data-delay="0">
-          <div class="trail-marker">01</div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="card-badge badge-flagship">Flagship</span>
-              <h3>Written Answer Grading V5</h3>
-            </div>
-            <p>Led end-to-end self-hosting validation for Quizlet's freeform grading model. Benchmarked Qwen3-32B-AWQ across H100/A100/L4 GPUs on GKE+Istio. Delivered <strong>+33% relative quality improvement</strong> (κ 0.438→0.583) at 100 RPS with p95 latency of 49ms — well inside the 100ms target.</p>
-            <div class="card-metrics">
-              <div class="metric-chip"><span class="m-val">+33%</span><span class="m-key">Quality (κ)</span></div>
-              <div class="metric-chip"><span class="m-val">49ms</span><span class="m-key">p95 @ 100 RPS</span></div>
-              <div class="metric-chip"><span class="m-val">H100</span><span class="m-key">GPU selected</span></div>
-            </div>
-            <div class="card-tags">
-              <span>vLLM 0.21</span><span>Qwen3-32B-AWQ</span><span>H100 GPU</span><span>GKE</span><span>Python</span><span>Istio</span>
-            </div>
+          <div class="about-social">
+            <a href="https://github.com/deveyn-hainey" target="_blank" rel="noopener" class="social-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/deveyn-hainey" target="_blank" rel="noopener" class="social-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:deveynnhainey@gmail.com" class="social-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
           </div>
         </div>
 
-        <div class="trail-card reveal" data-delay="80">
-          <div class="trail-marker">02</div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="card-badge badge-perf">Performance</span>
-              <h3>Study Service Optimization</h3>
-            </div>
-            <p>Root-caused event-loop blocking in Quizlet's Python ML inference service using Datadog APM and pyinstrument. Designed a zero-copy bytes-passthrough worker interface eliminating redundant Pydantic serialization — <strong>&gt;50% faster on large payloads</strong>. Shipped 5 Kubernetes HPA/Helm infrastructure PRs.</p>
-            <div class="card-metrics">
-              <div class="metric-chip"><span class="m-val">&gt;50%</span><span class="m-key">latency reduction</span></div>
-              <div class="metric-chip"><span class="m-val">5 PRs</span><span class="m-key">infra shipped</span></div>
-            </div>
-            <div class="card-tags">
-              <span>Python</span><span>FastAPI</span><span>asyncio</span><span>Kubernetes</span><span>Datadog</span><span>pyinstrument</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="trail-card reveal" data-delay="160">
-          <div class="trail-marker">03</div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="card-badge badge-research">Research</span>
-              <h3>MCQ Distractor Quality Analysis</h3>
-            </div>
-            <p>Built a BigQuery analysis covering <strong>5,200 production LLM-generated distractors</strong> across 9 generation sources at 373M terms/month scale. Proved +10.9–39.9pp quality uplifts with 95% CIs and recommended MIN_WORDS=2 — delivering +228M terms/month coverage and a 20.6pp avg quality gain.</p>
-            <div class="card-metrics">
-              <div class="metric-chip"><span class="m-val">5,200</span><span class="m-key">distractors</span></div>
-              <div class="metric-chip"><span class="m-val">+20.6pp</span><span class="m-key">quality uplift</span></div>
-              <div class="metric-chip"><span class="m-val">+228M</span><span class="m-key">terms/month</span></div>
-            </div>
-            <div class="card-tags">
-              <span>LLM-as-judge</span><span>BigQuery</span><span>Cohen's κ</span><span>A/B Testing</span><span>Periscope</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="trail-card reveal" data-delay="240">
-          <div class="trail-marker">04</div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="card-badge badge-docs">Engineering</span>
-              <h3>Workspaces ML Source-of-Truth</h3>
-            </div>
-            <p>Authored a <strong>126K-character ML Engineering Source-of-Truth</strong> for Quizlet Workspaces — synthesizing 15+ design docs, 8 Slack channels, and 20+ Jira tickets. Tracked 37 product rules, 30 open decisions, and 18 stakeholders. Also shipped a CPU-bound executor PR fixing event-loop blocking in the agentiq LLM service.</p>
-            <div class="card-tags">
-              <span>LangGraph</span><span>Gemini Flash</span><span>Vertex AI RAG</span><span>Python</span><span>NDJSON</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="trail-card reveal" data-delay="320">
-          <div class="trail-marker">05</div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="card-badge badge-feature">Feature</span>
-              <h3>Learn Diagram Support — M2 Milestone</h3>
-            </div>
-            <p>Designed and shipped end-to-end ML question generation for diagram cards, unblocking an entire study experience that previously produced <strong>zero questions</strong>. Wrote the planning doc, decomposed into 3 tickets, and modified 8 files across generators, data models, preprocessing, and tests.</p>
-            <div class="card-metrics">
-              <div class="metric-chip"><span class="m-val">8 files</span><span class="m-key">modified</span></div>
-              <div class="metric-chip"><span class="m-val">0→∞</span><span class="m-key">questions</span></div>
-            </div>
-            <div class="card-tags">
-              <span>Python</span><span>pytest</span><span>Spanner</span><span>Datadog</span><span>Jira LEARN-2486</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="trail-card reveal" data-delay="400">
-          <div class="trail-marker">06</div>
-          <div class="card-body">
-            <div class="card-top-row">
-              <span class="card-badge badge-data">Data Science</span>
-              <h3>Study Behavior Segmentation</h3>
-            </div>
-            <p>Built a <strong>study-frequency segmentation model in BigQuery ML</strong> classifying users into Sporadic, Push-It, and Systematic studiers. Performed feature engineering, normalization, and importance analysis — then translated findings into retention strategy recommendations for the Data Team. Maintained dbt models and Airflow DAGs at production scale.</p>
-            <div class="card-tags">
-              <span>BQML</span><span>BigQuery</span><span>dbt</span><span>Airflow</span><span>Periscope</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── ABOUT ──────────────────────────────────────────── -->
-    <section id="about" class="page">
-      <div class="about-wrap">
-        <div class="section-head reveal">
-          <div class="section-eyebrow">
-            <svg viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="3"/></svg>
-            The Explorer
-          </div>
-          <h2>About Me</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-bio reveal">
-            <p class="bio-lead">I'm a Machine Learning Engineer based in Denver, Colorado — passionate about building systems that scale and about getting ML to actually work in production.</p>
-            <p>I graduated from the University of Colorado Denver with a BS in Computer Science, a minor in Data Science, and a certificate in Cybersecurity. As an ML Engineer at Quizlet, I owned production ML systems end-to-end: selecting H100 GPUs for a grading service handling 100 RPS, designing LLM evaluation frameworks, and analyzing hundreds of millions of monthly user interactions.</p>
-            <p>I specialize in the full ML engineering stack — Python services (FastAPI/Gunicorn), vLLM/AWQ GPU serving, Kubernetes/GKE deployments, and Datadog observability. I love combining quantitative rigor (Cohen's κ, confidence intervals, Poisson load modeling) with real engineering to ship ML that actually works.</p>
-            <p>Outside of work, Colorado keeps me busy. I'm an avid hiker — there's something fitting about a data scientist who loves exploring unknown terrain. You'll also find me experimenting in the kitchen or planning the next adventure somewhere new in the world.</p>
-            <div class="about-social">
-              <a href="https://github.com/deveyn-hainey" target="_blank" rel="noopener" class="social-pill">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                GitHub
-              </a>
-              <a href="mailto:deveynnhainey@gmail.com" class="social-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Email
-              </a>
-              <a href="resume.pdf" target="_blank" rel="noopener" class="social-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                Resume
-              </a>
-            </div>
-          </div>
-
-          <div class="about-right">
-            <div class="skills-block reveal" data-delay="100">
-              <h3 class="block-title">Core Skills</h3>
-              <div class="skill-groups">
-                <div class="skill-group">
-                  <span class="sg-label">ML / Serving</span>
-                  <div class="sg-pills">
-                    <span>vLLM</span><span>Qwen / AWQ</span><span>LoRA</span><span>LangChain</span><span>LangGraph</span><span>LLM-as-judge</span>
-                  </div>
+        <div class="about-right">
+          <div class="skills-block reveal" data-delay="100">
+            <h3 class="block-title">What I Work With</h3>
+            <div class="skill-groups">
+              <div class="skill-group">
+                <span class="sg-label">AI &amp; Machine Learning</span>
+                <div class="sg-pills">
+                  <span>Python</span><span>OpenAI</span><span>Gemini</span><span>LangChain</span><span>AI Evaluation</span><span>A/B Testing</span>
                 </div>
-                <div class="skill-group">
-                  <span class="sg-label">Infrastructure</span>
-                  <div class="sg-pills">
-                    <span>GKE / Kubernetes</span><span>Helm</span><span>GCP</span><span>Istio</span><span>Datadog</span><span>Terraform</span>
-                  </div>
+              </div>
+              <div class="skill-group">
+                <span class="sg-label">Data &amp; Analytics</span>
+                <div class="sg-pills">
+                  <span>SQL</span><span>BigQuery</span><span>dbt</span><span>Airflow</span><span>Periscope</span><span>GCP</span>
                 </div>
-                <div class="skill-group">
-                  <span class="sg-label">Languages</span>
-                  <div class="sg-pills">
-                    <span>Python</span><span>FastAPI</span><span>asyncio</span><span>SQL</span><span>R</span><span>C++</span>
-                  </div>
+              </div>
+              <div class="skill-group">
+                <span class="sg-label">Product</span>
+                <div class="sg-pills">
+                  <span>Product Analytics</span><span>Roadmapping</span><span>A/B Testing</span><span>Stakeholder Engagement</span><span>Figma</span><span>Jira</span>
                 </div>
-                <div class="skill-group">
-                  <span class="sg-label">Data</span>
-                  <div class="sg-pills">
-                    <span>BigQuery</span><span>dbt</span><span>Airflow</span><span>BQML</span><span>Vertex AI</span>
-                  </div>
+              </div>
+              <div class="skill-group">
+                <span class="sg-label">Infrastructure &amp; Monitoring</span>
+                <div class="sg-pills">
+                  <span>Cloud (GCP)</span><span>Datadog</span><span>GrowthBook</span><span>Postman</span>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="edu-block reveal" data-delay="200">
-              <h3 class="block-title">Education</h3>
-              <div class="edu-item">
-                <div class="edu-row">
-                  <strong>BS Computer Science</strong>
-                  <span class="edu-year">2020 – 2025</span>
-                </div>
-                <div class="edu-school">University of Colorado Denver</div>
-                <div class="edu-sub">Minor in Data Science &nbsp;·&nbsp; Certificate in Cybersecurity</div>
+          <div class="edu-block reveal" data-delay="200">
+            <h3 class="block-title">Education</h3>
+            <div class="edu-item">
+              <div class="edu-row">
+                <strong>BS Computer Science</strong>
+                <span class="edu-year">2020 – 2025</span>
               </div>
-              <div class="cert-chips">
-                <span>SAFe 6.0 POPM</span>
-                <span>GCP GenAI for Developers</span>
-                <span>Udacity SQL for Data Analysis</span>
-              </div>
+              <div class="edu-school">University of Colorado Denver</div>
+              <div class="edu-sub">Minor in Data Science &nbsp;·&nbsp; Certificate in Cybersecurity</div>
             </div>
+            <div class="cert-chips">
+              <span>SAFe 6.0 POPM</span>
+              <span>CompTIA Security+</span>
+              <span>GCP GenAI for Developers</span>
+              <span>Udacity SQL</span>
+            </div>
+          </div>
 
-            <div class="hobbies-block reveal" data-delay="300">
-              <h3 class="block-title">Beyond the Terminal</h3>
-              <div class="hobby-list">
-                <div class="hobby-item">
-                  <span class="h-icon">🏔️</span>
-                  <div>
-                    <strong>Hiking</strong>
-                    <span>Exploring Colorado's trails — a data scientist in her natural habitat.</span>
-                  </div>
-                </div>
-                <div class="hobby-item">
-                  <span class="h-icon">🍪</span>
-                  <div>
-                    <strong>Baking</strong>
-                    <span>Perpetually iterating on the perfect chocolate chip cookie recipe.</span>
-                  </div>
-                </div>
-                <div class="hobby-item">
-                  <span class="h-icon">✈️</span>
-                  <div>
-                    <strong>Traveling</strong>
-                    <span>Finding inspiration in new cultures, food, and people around the world.</span>
-                  </div>
-                </div>
+          <div class="hobbies-block reveal" data-delay="300">
+            <h3 class="block-title">Beyond the Terminal</h3>
+            <div class="hobby-list">
+              <div class="hobby-item">
+                <span class="h-icon">🏔️</span>
+                <div><strong>Hiking</strong><span>Exploring Colorado's trails — data scientists need outdoor debugging sessions too.</span></div>
+              </div>
+              <div class="hobby-item">
+                <span class="h-icon">🍪</span>
+                <div><strong>Baking</strong><span>Perpetually iterating on the perfect chocolate chip cookie. Still in beta.</span></div>
+              </div>
+              <div class="hobby-item">
+                <span class="h-icon">✈️</span>
+                <div><strong>Traveling</strong><span>Finding inspiration in new cultures, food, and people around the world.</span></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ── CONTACT ─────────────────────────────────────────── -->
-    <section id="contact" class="page">
-      <div class="contact-wrap">
-        <div class="section-head reveal">
-          <div class="section-eyebrow">
-            <svg viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="3"/></svg>
-            Find Me in the Forest
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       RESUME
+  ══════════════════════════════════════════════════════ -->
+  <section id="resume" class="sec-resume">
+    <div class="resume-wrap">
+
+      <div class="section-head reveal">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="3"/></svg>
+          Experience
+        </div>
+        <h2>Resume</h2>
+        <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:16px; display:inline-flex;">
+          Download PDF
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M10 3v10M5 9l5 5 5-5"/><path d="M3 16h14"/></svg>
+        </a>
+      </div>
+
+      <div class="res-doc reveal">
+
+        <!-- Contact header -->
+        <div class="res-namecard">
+          <h2>Deveyn Hainey</h2>
+          <div class="res-contacts">
+            <a href="tel:7208836220">720-883-6220</a>
+            <a href="mailto:deveynnhainey@gmail.com">deveynnhainey@gmail.com</a>
+            <a href="https://linkedin.com/in/deveyn-hainey" target="_blank" rel="noopener">linkedin.com/in/deveyn-hainey</a>
           </div>
-          <h2>Get in Touch</h2>
-          <p>Whether you have an opportunity, a question, or just want to talk ML — my inbox is open.</p>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-form-wrap reveal">
-            <form class="contact-form" id="contactForm" action="mailto:deveynnhainey@gmail.com" method="GET" enctype="text/plain">
-              <div class="form-group">
-                <label for="cf-name">Name</label>
-                <input type="text" id="cf-name" name="name" placeholder="Your name" required>
-              </div>
-              <div class="form-group">
-                <label for="cf-email">Email</label>
-                <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
-              </div>
-              <div class="form-group">
-                <label for="cf-message">Message</label>
-                <textarea id="cf-message" name="body" rows="5" placeholder="What's on your mind?" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-full">
-                Send Message
-                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M2 10l8-8 8 8M4 8v9h4v-4h4v4h4V8"/>
-                </svg>
-              </button>
-            </form>
+        <!-- Education -->
+        <div class="res-section">
+          <h3 class="res-sec-title">Education</h3>
+          <div class="res-edu-item">
+            <div class="res-edu-top">
+              <strong>University of Colorado, Denver</strong>
+              <span>Denver, Colorado</span>
+            </div>
+            <div class="res-edu-degree">Bachelor of Science in Computer Science &nbsp;·&nbsp; Minor in Data Science &nbsp;·&nbsp; Certificate in Cybersecurity</div>
           </div>
+        </div>
 
-          <div class="contact-side reveal" data-delay="100">
-            <h3>Or reach me directly</h3>
-            <div class="contact-card-list">
-              <a href="mailto:deveynnhainey@gmail.com" class="ccard">
-                <div class="ccard-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <div class="ccard-text">
-                  <span class="ccard-label">Email</span>
-                  <span class="ccard-value">deveynnhainey@gmail.com</span>
-                </div>
-                <svg class="ccard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
-              </a>
-              <a href="https://github.com/deveyn-hainey" target="_blank" rel="noopener" class="ccard">
-                <div class="ccard-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                </div>
-                <div class="ccard-text">
-                  <span class="ccard-label">GitHub</span>
-                  <span class="ccard-value">@deveyn-hainey</span>
-                </div>
-                <svg class="ccard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
-              </a>
-              <a href="https://linkedin.com/in/deveyn-hainey" target="_blank" rel="noopener" class="ccard">
-                <div class="ccard-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </div>
-                <div class="ccard-text">
-                  <span class="ccard-label">LinkedIn</span>
-                  <span class="ccard-value">deveyn-hainey</span>
-                </div>
-                <svg class="ccard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
-              </a>
+        <!-- Work Experience -->
+        <div class="res-section">
+          <h3 class="res-sec-title">Work Experience</h3>
+
+          <div class="res-job">
+            <div class="res-job-header">
+              <div>
+                <span class="res-company">Quizlet</span>
+                <span class="res-location">Denver, Colorado</span>
+              </div>
             </div>
 
-            <blockquote class="forest-quote">
-              <svg class="fq-leaf" viewBox="0 0 40 56" fill="none" aria-hidden="true">
-                <path d="M20 4C10 4 4 14 4 26C4 40 10 52 20 52C20 52 20 30 36 20C36 20 32 4 20 4Z" fill="#2D6A4F" opacity="0.12"/>
-              </svg>
-              <p>"Not all those who wander are lost — some are just exploring the data."</p>
-            </blockquote>
+            <div class="res-role">
+              <div class="res-role-header">
+                <strong>Engineer, AI &amp; ML</strong>
+                <span>July 2025 – Present</span>
+              </div>
+              <ul>
+                <li>Prioritized and drove latency improvement initiatives for a high-traffic AI service serving 60M+ users, delivering the platform's largest performance gains.</li>
+                <li>Led delivery of an LLM-powered explanation experience using OpenAI and Gemini models, partnering across product, engineering, and AI teams to launch AI-assisted learning experiences for millions of users.</li>
+                <li>Defined infrastructure and model evaluation strategy for a next-generation AI grading platform, informing product investment decisions across cost, latency, and scalability.</li>
+                <li>Defined AI quality metrics and evaluation frameworks that uncovered a 58.9% quality gap, building the business case and roadmap for a major model rewrite initiative.</li>
+              </ul>
+            </div>
+
+            <div class="res-role">
+              <div class="res-role-header">
+                <strong>Machine Learning Associate</strong>
+                <span>September 2024 – July 2025</span>
+              </div>
+              <ul>
+                <li>Established search quality metrics and evaluation frameworks that identified ranking opportunities, contributing to a 25% increase in search adoption.</li>
+                <li>Drove experimentation, algorithm evaluation, and product analytics efforts that informed product decisions across search, recommendations, and learning experiences.</li>
+                <li>Built dashboards and insights on user engagement, search behavior, and learning patterns that guided product strategy and feature enhancements.</li>
+              </ul>
+            </div>
+
+            <div class="res-role">
+              <div class="res-role-header">
+                <strong>Content Discovery (Data Science) Research Assistant</strong>
+                <span>June 2023 – September 2024</span>
+              </div>
+              <ul>
+                <li>Analyzed terabytes of user behavior data to identify friction points and prioritize product improvements, contributing to a 20% increase in key performance metrics.</li>
+                <li>Partnered with engineering and data science teams to improve search relevance and recommendation quality, increasing search effectiveness by 20% and improving user satisfaction.</li>
+                <li>Led initiatives to improve textbook content discovery by defining ranking requirements and success metrics, resulting in a 40% improvement in search result quality.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="res-job">
+            <div class="res-job-header">
+              <div>
+                <span class="res-company">University of Colorado Denver</span>
+                <span class="res-location">Denver, Colorado</span>
+              </div>
+            </div>
+            <div class="res-role">
+              <div class="res-role-header">
+                <strong>Assistant Researcher</strong>
+                <span>September 2024 – May 2025</span>
+              </div>
+              <ul>
+                <li>Orchestrated proof-of-concept security tools tested by 30+ faculty and students; provided technical reports and presentations to academic and industry audiences. Analyzed 20+ case studies to assess potential vulnerabilities and mitigation strategies.</li>
+                <li>Awarded the EUReCA Grant for co-developing PhishSense, a Gmail add-on that scans emails for phishing threats, provides detailed reasoning, and generates an insights dashboard to help users understand their email security trends.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="res-job">
+            <div class="res-job-header">
+              <div>
+                <span class="res-company">Publicis Sapient</span>
+                <span class="res-location">Chicago, Illinois</span>
+              </div>
+            </div>
+            <div class="res-role">
+              <div class="res-role-header">
+                <strong>Product Management Intern</strong>
+                <span>June 2024 – August 2024</span>
+              </div>
+              <ul>
+                <li>Led delivery of a Fortune 500 AI initiative, developing a proof-of-concept solution that improved business intelligence efficiency by 15%.</li>
+                <li>Owned roadmap execution and stakeholder alignment for an enterprise AI platform, achieving 95% on-time milestone delivery.</li>
+                <li>Designed 40+ product concepts and user flows for a web-based AI application, accelerating collaboration between design and engineering teams.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="res-job">
+            <div class="res-job-header">
+              <div>
+                <span class="res-company">Lockheed Martin</span>
+                <span class="res-location">Littleton, Colorado</span>
+              </div>
+            </div>
+            <div class="res-role">
+              <div class="res-role-header">
+                <strong>Space Tech – Software Engineering Intern</strong>
+                <span>April 2020 – November 2020</span>
+              </div>
+              <ul>
+                <li>Led development and launch of a 360° VR training platform, improving onboarding experiences for hundreds of employees.</li>
+                <li>Secured buy-in from 5 military executives by delivering product demonstrations and communicating business and technical value.</li>
+                <li>Drove usability improvements to enterprise systems, increasing accessibility and user efficiency by 76%.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-  </main>
+        <!-- Skills -->
+        <div class="res-section">
+          <h3 class="res-sec-title">Skills &amp; Certifications</h3>
+          <div class="res-skills-grid">
+            <div>
+              <strong>Technical</strong>
+              <p>Python, SQL, OpenAI, Gemini, vLLM, BigQuery, dbt, Airflow, Figma, Datadog, GrowthBook, Periscope, GCP</p>
+            </div>
+            <div>
+              <strong>Product</strong>
+              <p>Product Strategy, A/B Testing, Product Analytics, Agile Development, Roadmapping, Stakeholder Engagement, Jira, Confluence</p>
+            </div>
+            <div>
+              <strong>Certifications</strong>
+              <p>Agile (SAFe POPM), CompTIA Security+, Udacity SQL for Data Analysis, GCP GenAI for Developers</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /res-doc -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════════════ -->
+  <section id="contact" class="sec-contact">
+    <div class="contact-wrap">
+
+      <div class="section-head reveal">
+        <div class="section-eyebrow">
+          <svg viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="3"/></svg>
+          Find Me in the Forest
+        </div>
+        <h2>Get in Touch</h2>
+        <p>Whether you have an opportunity, a question, or just want to talk AI and data — my inbox is open.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" action="mailto:deveynnhainey@gmail.com" method="GET" enctype="text/plain">
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="body" rows="5" placeholder="What's on your mind?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Send Message
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M2.5 12.5l7.5-7.5 7.5 7.5M5 10v7h4v-4h2v4h4v-7"/></svg>
+            </button>
+          </form>
+        </div>
+
+        <div class="contact-side reveal" data-delay="100">
+          <h3>Or reach me directly</h3>
+          <div class="ccard-list">
+            <a href="mailto:deveynnhainey@gmail.com" class="ccard">
+              <div class="ccard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div class="ccard-text"><span class="ccard-label">Email</span><span class="ccard-value">deveynnhainey@gmail.com</span></div>
+              <svg class="ccard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+            </a>
+            <a href="https://github.com/deveyn-hainey" target="_blank" rel="noopener" class="ccard">
+              <div class="ccard-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></div>
+              <div class="ccard-text"><span class="ccard-label">GitHub</span><span class="ccard-value">@deveyn-hainey</span></div>
+              <svg class="ccard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/deveyn-hainey" target="_blank" rel="noopener" class="ccard">
+              <div class="ccard-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+              <div class="ccard-text"><span class="ccard-label">LinkedIn</span><span class="ccard-value">linkedin.com/in/deveyn-hainey</span></div>
+              <svg class="ccard-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <blockquote class="forest-quote">
+            <svg class="fq-leaf" viewBox="0 0 40 56" fill="none" aria-hidden="true">
+              <path d="M20 4C10 4 4 14 4 26C4 40 10 52 20 52C20 52 20 30 36 20C36 20 32 4 20 4Z" fill="#2D6A4F" opacity="0.12"/>
+            </svg>
+            <p>"Not all those who wander are lost — some are just exploring the data."</p>
+          </blockquote>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <svg viewBox="0 0 20 24" fill="none" width="18" height="18">
-          <path d="M10 2C5 2 2 7 2 12C2 17 5 22 10 22C10 22 10 13 17 9C17 9 15 2 10 2Z" fill="currentColor" opacity="0.8"/>
-        </svg>
+        <svg viewBox="0 0 20 24" fill="none" width="16" height="16"><path d="M10 2C5 2 2 7 2 12C2 17 5 22 10 22C10 22 10 13 17 9C17 9 15 2 10 2Z" fill="currentColor" opacity="0.8"/></svg>
         <span>Deveyn Hainey</span>
       </div>
       <p class="footer-copy">Built with curiosity &amp; lots of coffee &nbsp;·&nbsp; Denver, CO &nbsp;·&nbsp; 2025</p>
       <div class="footer-links">
         <a href="https://github.com/deveyn-hainey" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:deveynnhainey@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/deveyn-hainey" target="_blank" rel="noopener">LinkedIn</a>
         <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
     </div>

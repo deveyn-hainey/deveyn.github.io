@@ -1,9 +1,9 @@
 /* ── FIREFLIES ────────────────────────────────────────── */
-(function initFireflies() {
+(function () {
   const canvas = document.getElementById('fireflies');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  let W, H, particles = [], raf;
+  let W, H, particles = [];
 
   function resize() {
     W = canvas.width  = window.innerWidth;
@@ -12,39 +12,28 @@
 
   function makeParticle() {
     return {
-      x:      Math.random() * W,
-      y:      Math.random() * H,
-      r:      Math.random() * 1.8 + 0.5,
-      vx:     (Math.random() - 0.5) * 0.35,
-      vy:     -(Math.random() * 0.4 + 0.05),
-      alpha:  Math.random(),
-      aDir:   (Math.random() > 0.5 ? 1 : -1) * 0.004,
-      phase:  Math.random() * Math.PI * 2,
-      hue:    Math.random() * 30 + 70,   // warm yellow-green (70–100)
+      x: Math.random() * W, y: Math.random() * H,
+      r: Math.random() * 1.8 + 0.4,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: -(Math.random() * 0.38 + 0.06),
+      alpha: Math.random(), aDir: (Math.random() > 0.5 ? 1 : -1) * 0.004,
+      phase: Math.random() * Math.PI * 2,
+      hue: Math.random() * 35 + 68,
     };
-  }
-
-  function init() {
-    resize();
-    particles = Array.from({ length: 45 }, makeParticle);
-    loop();
   }
 
   function loop() {
     ctx.clearRect(0, 0, W, H);
     for (const p of particles) {
-      p.x    += p.vx + Math.sin(p.phase) * 0.18;
-      p.y    += p.vy;
-      p.phase += 0.018;
+      p.x += p.vx + Math.sin(p.phase) * 0.16;
+      p.y += p.vy;
+      p.phase += 0.017;
       p.alpha += p.aDir;
-      if (p.alpha <= 0 || p.alpha >= 0.85) p.aDir *= -1;
-      if (p.y < -10) {
-        p.y = H + 10;
-        p.x = Math.random() * W;
-      }
+      if (p.alpha <= 0 || p.alpha >= 0.82) p.aDir *= -1;
+      if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
       ctx.save();
-      ctx.globalAlpha = Math.max(0, p.alpha) * 0.65;
-      ctx.shadowBlur  = 10;
+      ctx.globalAlpha = Math.max(0, p.alpha) * 0.6;
+      ctx.shadowBlur  = 9;
       ctx.shadowColor = `hsla(${p.hue},75%,60%,0.9)`;
       ctx.fillStyle   = `hsla(${p.hue},80%,72%,1)`;
       ctx.beginPath();
@@ -52,87 +41,24 @@
       ctx.fill();
       ctx.restore();
     }
-    raf = requestAnimationFrame(loop);
+    requestAnimationFrame(loop);
   }
 
   window.addEventListener('resize', resize, { passive: true });
-  init();
+  resize();
+  particles = Array.from({ length: 45 }, makeParticle);
+  loop();
 })();
 
-/* ── PAGE NAVIGATION ─────────────────────────────────── */
-const PAGES = ['home', 'projects', 'about', 'contact'];
+/* ── NAVBAR ───────────────────────────────────────────── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
 
-function navigateTo(id) {
-  if (!PAGES.includes(id)) return;
-
-  // hide current
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-
-  // show target
-  const target = document.getElementById(id);
-  if (target) {
-    target.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'instant' });
-
-    // trigger reveal for the new page
-    setTimeout(() => triggerReveal(target), 50);
-
-    // trigger trail line if projects
-    if (id === 'projects') {
-      setTimeout(() => {
-        const line = document.getElementById('trailLine');
-        if (line) line.classList.add('visible');
-      }, 300);
-    }
-  }
-
-  // update nav links
-  document.querySelectorAll(`.nav-link[data-target="${id}"]`).forEach(l => l.classList.add('active'));
-  document.querySelectorAll(`.nav-brand[data-target="${id}"]`).forEach(l => l.classList.add('active'));
-
-  // update URL hash without scroll
-  history.pushState(null, '', '#' + id);
-
-  // close mobile menu
-  closeMobileMenu();
-}
-
-function triggerReveal(container) {
-  container.querySelectorAll('.reveal').forEach((el, i) => {
-    const delay = parseInt(el.dataset.delay || 0, 10);
-    setTimeout(() => el.classList.add('visible'), delay);
-  });
-}
-
-/* ── WIRING UP NAV LINKS ─────────────────────────────── */
-document.querySelectorAll('[data-target]').forEach(el => {
-  el.addEventListener('click', e => {
-    e.preventDefault();
-    navigateTo(el.dataset.target);
-  });
-});
-document.querySelectorAll('[data-nav]').forEach(el => {
-  el.addEventListener('click', () => navigateTo(el.dataset.nav));
-});
-
-/* ── HASH ROUTING ────────────────────────────────────── */
-function handleHash() {
-  const hash = window.location.hash.replace('#', '') || 'home';
-  navigateTo(PAGES.includes(hash) ? hash : 'home');
-}
-window.addEventListener('popstate', handleHash);
-handleHash();
-
-/* ── MOBILE NAV TOGGLE ───────────────────────────────── */
+/* ── MOBILE MENU ──────────────────────────────────────── */
 const hamburger = document.getElementById('hamburger');
 const navMenu   = document.getElementById('navMenu');
-
-function closeMobileMenu() {
-  hamburger.classList.remove('open');
-  hamburger.setAttribute('aria-expanded', 'false');
-  navMenu.classList.remove('open');
-}
 
 hamburger.addEventListener('click', () => {
   const open = navMenu.classList.toggle('open');
@@ -140,48 +66,52 @@ hamburger.addEventListener('click', () => {
   hamburger.setAttribute('aria-expanded', String(open));
 });
 
-/* ── NAVBAR SCROLL SHADOW ────────────────────────────── */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
+// Close menu when a link is clicked
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
 
-/* ── SCROLL REVEAL (within active page) ─────────────── */
-const revealObserver = new IntersectionObserver(entries => {
+/* ── ACTIVE NAV ON SCROLL ─────────────────────────────── */
+const sections  = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('.nav-link[data-section]');
+const NAV_H     = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 66;
+
+const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const delay = parseInt(entry.target.dataset.delay || 0, 10);
-      setTimeout(() => entry.target.classList.add('visible'), delay);
-      revealObserver.unobserve(entry.target);
+      const id = entry.target.id;
+      navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === id));
     }
   });
-}, { threshold: 0.12 });
+}, { rootMargin: `-${NAV_H}px 0px -55% 0px`, threshold: 0 });
 
-function observePage(container) {
-  container.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-}
+sections.forEach(s => sectionObserver.observe(s));
 
-// Observe all pages on load
-document.querySelectorAll('.page').forEach(page => observePage(page));
+/* ── TRAIL LINE ───────────────────────────────────────── */
+const trailLineObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      trailLineObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05 });
 
-/* ── HOME PAGE REVEAL ────────────────────────────────── */
-window.addEventListener('load', () => {
-  const homePage = document.getElementById('home');
-  if (homePage && homePage.classList.contains('active')) {
-    setTimeout(() => triggerReveal(homePage), 100);
-  }
-});
+const trailLine = document.getElementById('trailLine');
+if (trailLine) trailLineObserver.observe(trailLine);
 
-/* ── CONTACT FORM ────────────────────────────────────── */
-document.getElementById('contactForm')?.addEventListener('submit', function (e) {
-  const name    = document.getElementById('cf-name')?.value.trim();
-  const email   = document.getElementById('cf-email')?.value.trim();
-  const message = document.getElementById('cf-message')?.value.trim();
+/* ── SCROLL REVEAL ────────────────────────────────────── */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const delay = parseInt(entry.target.dataset.delay || '0', 10);
+    setTimeout(() => entry.target.classList.add('visible'), delay);
+    revealObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.1 });
 
-  if (!name || !email || !message) {
-    e.preventDefault();
-    alert('Please fill in all fields.');
-    return;
-  }
-  // mailto: form submits naturally; no extra handling needed
-});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
