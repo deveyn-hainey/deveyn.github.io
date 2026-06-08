@@ -187,11 +187,11 @@ ul { list-style: none; }
 .trees {
   position: absolute;
   bottom: 0;
-  width: 480px;
+  width: 640px;
   height: auto;
 }
-.trees-left  { left: -30px; }
-.trees-right { right: -30px; }
+.trees-left  { left: -40px; }
+.trees-right { right: -40px; }
 
 .hero {
   flex: 1;
