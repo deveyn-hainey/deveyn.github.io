@@ -108,6 +108,7 @@ ul { list-style: none; }
 .page-section {
   display: none;
   position: relative;
+  overflow: hidden;
   z-index: 1;
   min-height: 100vh;
   padding-top: var(--nav-h);
@@ -174,7 +175,6 @@ ul { list-style: none; }
 ══════════════════════════════════════════════════════ */
 #home {
   background: var(--bg);
-  overflow: hidden;
 }
 
 /* Forest tree silhouettes */
@@ -187,7 +187,7 @@ ul { list-style: none; }
 .trees {
   position: absolute;
   bottom: 0;
-  width: 320px;
+  width: 480px;
   height: auto;
 }
 .trees-left  { left: -30px; }
@@ -356,6 +356,8 @@ ul { list-style: none; }
 .badge-pm        { background: rgba(59,130,246,0.1);  color: #1d4ed8; }
 .badge-security  { background: rgba(127,85,57,0.1);   color: var(--earth); }
 .badge-search    { background: rgba(139,92,246,0.1);  color: #5b21b6; }
+.badge-docs      { background: rgba(59,130,246,0.1);  color: #1d4ed8; }
+.badge-perf      { background: rgba(20,184,166,0.1);  color: #0f766e; }
 
 .card-metrics { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
 .metric-chip {
